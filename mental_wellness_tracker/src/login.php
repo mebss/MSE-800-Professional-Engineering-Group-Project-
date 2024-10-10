@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verify the password
         if (password_verify($password, $row["password"])) {
             echo "Login successful!";
-            header("Location: welcome.html");  // Redirect to a welcome page (create this page separately)
+            header("Location: home.html");  // Redirect to a welcome page (create this page separately)
         } else {
             echo "Invalid password!";
         }
@@ -24,4 +24,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
-    
