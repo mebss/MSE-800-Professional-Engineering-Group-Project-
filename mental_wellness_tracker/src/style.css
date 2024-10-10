@@ -1,14 +1,30 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background: linear-gradient(to right, #8e44ad, #3498db);
+    color: #fff;
 }
+
 .container {
-    width: 50%;
-    margin: 50px auto;
     padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-h1 {
-    text-align: center;
+
+.card {
+    background: #fff;
+    color: #333;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.card-title {
+    color: #8e44ad;
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 20px;
+}
+
+.btn {
+    border-radius: 20px;
 }
