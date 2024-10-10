@@ -14,7 +14,7 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: mehrab
       MYSQL_DATABASE: mental_wellness_tracker
     ports:
       - "3307:3306"
