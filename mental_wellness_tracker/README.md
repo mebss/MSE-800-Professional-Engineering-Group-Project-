@@ -130,12 +130,6 @@ Once the credentials are updated, the application should be able to connect to y
    - View a list of key mental health services in New Zealand.
    - Send a message using the contact form, which will be emailed to the admin (via the configured `msmtp` settings).
 
-## Screenshots
-- Homepage:
-- Mood Tracking:
-- Goal Setting:
-- Self-Care:
-
 ## Contributing
 Contributions are welcome! If you have any suggestions or improvements, feel free to create a pull request or open an issue.
 
