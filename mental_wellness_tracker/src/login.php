@@ -1,26 +1,40 @@
 <?php
+// Include database connection
 include 'db_connection.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+session_start();
 
-    $sql = "SELECT * FROM users WHERE email='$email'";
-    $result = $conn->query($sql);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Fetch the user from the database
+    $sql = "SELECT * FROM users WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        // Verify the password
-        if (password_verify($password, $row["password"])) {
-            echo "Login successful!";
-            header("Location: home.html");  // Redirect to a welcome page (create this page separately)
+        $user = $result->fetch_assoc();
+
+        // Verify password
+        if (password_verify($password, $user['password'])) {
+            // Successful login - set session variables
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username']; // Store username in session
+
+            // Redirect to home page
+            header("Location: home.php");
+            exit();
         } else {
-            echo "Invalid password!";
+            echo "Incorrect password.";
         }
     } else {
-        echo "No user found with that email!";
+        echo "No account found with that email.";
     }
 
+    $stmt->close();
     $conn->close();
 }
 ?>
