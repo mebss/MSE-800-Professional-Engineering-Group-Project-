@@ -11,10 +11,10 @@ services:
       - db
 
   db:
-    image: mysql:5.7
+    image: mysql:latest
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: mehrab
+      MYSQL_ROOT_PASSWORD: lisbeth369
       MYSQL_DATABASE: mental_wellness_tracker
     ports:
       - "3307:3306"

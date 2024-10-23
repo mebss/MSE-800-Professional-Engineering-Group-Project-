@@ -1,7 +1,7 @@
 <?php
 $servername = "db";  // Docker service name for MySQL
 $username = "root";  // Default MySQL root user
-$password = "mehrab";  // Password as defined in docker-compose.yml
+$password = "lisbeth369";  // Password as defined in docker-compose.yml
 $dbname = "mental_wellness_tracker";  // Database name
 
 // Create a connection

@@ -1,0 +1,279 @@
+@import url("fontawesome-all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
+
+
+
+/* Container */
+
+	.container {
+		margin: 0 auto;
+		max-width: 100%;
+		width: 1400px;
+	}
+
+
+/* Section/Article */
+
+section.special, article.special {
+	text-align: center;
+}
+
+header p {
+	color: #999;
+	font-size: 1.25em;
+	position: relative;
+	margin-top: -1.25em;
+	margin-bottom: 2.25em;
+}
+
+header.major {
+	text-align: center;
+	margin: 0 0 2em 0;
+}
+
+	header.major h2 {
+		font-size: 2.25em;
+		color: #224E41;
+	}
+	header.major h5 {
+		font-size: 2.25em;
+		color: #224E41;
+	}
+	header.major p {
+		position: relative;
+		padding: 1em 0 0 0;
+		margin: 0;
+		top: -1em;
+		font-size: 1.5em;
+		letter-spacing: -0.025em;
+		color:#2F4A15
+	}
+
+/* Image */
+
+.image {
+	border: 0;
+	display: inline-block;
+	position: relative;
+	border-radius: 5px;
+}
+
+	.image img {
+		display: block;
+		border-radius: 5px;
+	}
+
+	.image.left {
+		display: block;
+		float: left;
+		margin: 0 2em 2em 0;
+		position: relative;
+		top: 0.25em;
+	}
+
+		.image.left img {
+			display: block;
+			width: 100%;
+		}
+
+	.image.fit {
+		display: block;
+	}
+
+		.image.fit img {
+			display: block;
+			width: 100%;
+		}
+
+	.image.featured {
+		display: block;
+		margin: 0 0 2em 0;
+	}
+
+		.image.featured img {
+			display: block;
+			width: 100%;
+		}
+
+/* Icon */
+
+.icon {
+	text-decoration: none;
+	position: relative;
+	text-decoration: none;
+}
+
+	.icon:before {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		line-height: 1;
+		text-transform: none !important;
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 400;
+	}
+
+	.icon > .label {
+		display: none;
+	}
+
+	.icon:before {
+		line-height: inherit;
+	}
+
+	.icon.solid:before {
+		font-weight: 900;
+	}
+
+	.icon.brands:before {
+		font-family: 'Font Awesome 5 Brands';
+	}
+
+	.icon.major {
+		text-align: center;
+		cursor: pointer;
+		background-color: #37c0fb;
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
+		background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
+		color: #fff;
+		border-radius: 100%;
+		display: inline-block;
+		width: 5em;
+		height: 5em;
+		line-height: 5em;
+		box-shadow: 0 0 0 7px white, 0 0 0 8px #e0e0e0;
+		margin: 0 0 2em 0;
+	}
+
+		.icon.major:before {
+			font-size: 36px;
+		}
+		
+
+/* Box */
+
+.box.highlight {
+	text-align: center;
+}
+
+.box.post {
+	position: relative;
+	margin: 0 0 2em 0;
+	
+}
+
+	.box.post:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	.box.post .inner {
+		margin-left: calc(30% + 2em);
+	}
+		.box.post .inner h3 {
+			color: #224E41;
+		}
+		.box.post .inner p {
+			color: #428856;
+		}
+	
+
+		.box.post .inner > :last-child {
+			margin-bottom: 0;
+		}
+
+	.box.post .image {
+		width: 30%;
+		margin: 0;
+	}
+
+	
+
+
+/* Banner */
+
+#banner {
+	background-image: url("../../Img/sun.jpg");
+	background-position: center center;
+	background-size: cover;
+	height: 28em;
+	text-align: center;
+	position: relative;
+}
+
+	#banner header {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: #212121;
+		background: rgba(27, 27, 27, 0.75);
+		color: #fff;
+		padding: 1.5em 0;
+	}
+
+		#banner header h2 {
+			display: inline-block;
+			margin: 0;
+			font-size: 1.25em;
+			vertical-align: middle;
+		}
+
+			#banner header h2 em {
+				opacity: 0.75;
+			}
+
+			#banner header h2 a {
+				border-bottom-color: rgba(255, 255, 255, 0.5);
+			}
+
+				#banner header h2 a:hover {
+					border-bottom-color: transparent;
+				}
+
+		#banner header .button {
+			vertical-align: middle;
+			margin-left: 1em;
+		}
+
+/* Wrapper */
+
+	.wrapper {
+		padding: 5em 0 3em 0;
+	}
+
+		.wrapper.style1 {
+			background: #fff;
+		}
+
+		.wrapper.style2 {
+			background-color: #fff;
+			background-image: url("images/bg02.png"), url("images/bg03.png"), url("images/bg01.png");
+			background-position: top left,						bottom left,					top left;
+			background-size: 100% 6em,						100% 6em,						auto;
+			background-repeat: no-repeat,						no-repeat,						repeat;
+		}
+
+		.wrapper.style3 {
+			background-color: #37c0fb;
+			background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
+			background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
+			background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
+			background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
+			color: #fff;
+		}
+
+			.wrapper.style3 .button {
+				background: #fff;
+				color: #474747;
+			}
+
+				.wrapper.style3 .button:hover {
+					color: #37c0fb !important;
+				}
