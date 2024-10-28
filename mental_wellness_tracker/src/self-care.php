@@ -34,57 +34,193 @@ foreach ($categories as $category) {
 $conn->close();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Self-Care - Te Hauora o Te Hinengaro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Self-Care - Te Hauora o Te Hinengaro</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css1/main.css" />
+		<link rel="stylesheet" href="style.css">
 
-    <!-- Include the Navbar -->
-    <?php include 'navbar.php'; ?>
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+		<!-- Include the Navbar -->
+		<?php include 'navbar.php'; ?>
+			<!-- Header -->
+			 <!-- Include the Navbar -->
+				<div id="header-wrapper">
+					
+					<!-- Hero -->
+						<section id="hero" class="container">
+							<header>
+								<h2>Self-Care
+								</h2>
+							</header>
+							<p>
+								Explore personalized self-care suggestions and tips to improve your mental and emotional well-being.
+							</p>
+						</section>
+				</div>
+			<!-- Promo -->
+				<div id="promo-wrapper">
+					<section id="promo">
+						<h2>Physical Self-Care
+						</h2>
+					</section>
+				</div>
+			<!-- Features 1 -->
+				<div class="wrapper">
+					<div class="container">
+						<div class="row">
+							<section class="col-6 col-12-narrower feature">
+								<div class="image-wrapper first">
+									<a href="#" class="image featured first"><img src="Img/pic01.jpg" alt="" /></a>
+								</div>
+								<header>
+									<h2>Take a short walk outside<br />
+										to get fresh air.</h2>
+								</header>
+								<p>A short stroll outside can work wonders! Fresh air, sunshine,
+									 and a bit of greenery can instantly lift your mood. So, take a break, 
+									 step outside, and let nature's magic brighten your day.</p>
+							
+							</section>
+							<section class="col-6 col-12-narrower feature">
+								<div class="image-wrapper">
+									<a href="#" class="image featured"><img src="Img/pic02.jpg" alt="" /></a>
+								</div>
+								<header>
+									<h2>Stay hydrated
+										<br />
+										and eat a balanced meal.</h2>
+								</header>
+								<p>Fuel your body like a superhero! Stay hydrated and eat a balanced diet
+									 to power through your day and conquer any challenge.</p>
+							</section>
+						</div>
+					</div>
+				</div>
 
-    <!-- Self-Care Section -->
-    <div class="container mt-5">
-        <h2>Self-Care</h2>
-        <p>Explore personalized self-care suggestions and tips to improve your mental and emotional well-being.</p>
+			<!-- Promo -->
+				<div id="promo-wrapper">
+					<section id="promo">
+						<h2>Emotional Self-Care
+						</h2>
+					</section>
+				</div>
 
-        <div class="row">
-            <?php foreach ($categories as $category) { ?>
-                <div class="col-md-6">
-                    <h4><?php echo htmlspecialchars($category); ?> Self-Care</h4>
-                    <ul class="list-group mb-4">
-                        <?php if (!empty($self_care_suggestions[$category])) {
-                            foreach ($self_care_suggestions[$category] as $suggestion) { ?>
-                                <li class="list-group-item"><?php echo htmlspecialchars($suggestion); ?></li>
-                            <?php }
-                        } else { ?>
-                            <li class="list-group-item">No suggestions available for this category.</li>
-                        <?php } ?>
-                    </ul>
-                </div>
-            <?php } ?>
-        </div>
+			<!-- Features 2 -->
 
-        <!-- Resources Section -->
-        <h4>Additional Resources</h4>
-        <ul class="list-group mb-4">
-            <li class="list-group-item"><a href="https://www.verywellmind.com/practice-5-minute-meditation-3144714"target="_blank">5-Minute Meditation Techniques</a></li>
-            <li class="list-group-item"><a href="https://health.clevelandclinic.org/how-to-start-a-self-care-routine"target="_blank">How to Create a Self-Care Routine</a></li>
-            <li class="list-group-item"><a href="https://www.helpguide.org/wellness/fitness/the-mental-health-benefits-of-exercise"target="_blank">The Benefits of Physical Exercise for Mental Health</a></li>
-        </ul>
-    </div>
-
-    <!-- Footer -->
-    <footer class="mt-auto">
+				<div class="wrapper">
+					<div class="container">
+						<div class="row">
+							<section class="col-6 col-12-narrower feature">
+								<div class="image-wrapper first">
+									<a href="#" class="image featured first"><img src="Img/pic06.jpg" alt="" /></a>
+								</div>
+								<header>
+									<h2>Journal your thoughts or emotions.
+									</h2>
+								</header>
+								<p>Journaling can help you process your emotions, identify patterns in your thoughts,
+									 and develop a greater sense of self-awareness. </p>
+							
+							</section>
+							<section class="col-6 col-12-narrower feature">
+								<div class="image-wrapper">
+									<a href="#" class="image featured"><img src="Img/pic07.jpg" alt="" /></a>
+								</div>
+								<header>
+									<h2>Talk to a friend<br />
+										or loved one about your feelings.</h2>
+								</header>
+								<p>Connecting with a friend or loved one and expressing your emotions can provide emotional support and validation. 
+									It can also help you to feel less alone and more understood. </p>
+							</section>
+						</div>
+					</div>
+				</div>
+			<!-- Promo -->
+			<div id="promo-wrapper">
+				<section id="promo">
+					<h2>Mental and Spiritual Self-Care
+					</h2>
+				</section>
+			</div>
+			<!-- Features 3 -->
+				
+			<div class="wrapper">
+				<div class="container">
+					<div class="row">
+						<section class="col-6 col-12-narrower feature">
+							<div class="image-wrapper first">
+								<a href="#" class="image featured first"><img src="Img/pic08.jpg" alt="" /></a>
+							</div>
+							<header>
+								<h2>Read a book<br />
+									or learn something new.</h2>
+							</header>
+							<p>Reading a book or learning something new can stimulate your mind, reduce stress, 
+								and provide you with a sense of accomplishment. </p>
+						
+						</section>
+						<section class="col-6 col-12-narrower feature">
+							<div class="image-wrapper">
+								<a href="#" class="image featured"><img src="Img/pic09.jpg" alt="" /></a>
+							</div>
+							<header>
+								<h2>Practice gratitude by writing down 
+									<br />
+									what you are thankful for.</h2>
+							</header>
+							<p>By consciously acknowledging the things you're grateful for,
+								 you can cultivate a more positive outlook on life and reduce stress. </p>
+						</section>
+					</div>
+				</div>
+			
+			<!-- Promo -->
+			<div id="promo-wrapper">
+				<section id="promo">
+					<h2>Additional Resources
+					</h2>
+				</section>
+			</div>
+<!-- Features 4 -->
+				
+<div class="wrapper">
+	<section class="container">
+		
+		<div class="row features">
+			<section class="col-4 col-12-narrower feature">
+				<div class="image-wrapper first">
+					<a href="https://www.verywellmind.com/practice-5-minute-meditation-3144714" class="image featured" target="_blank"><img src="Img/pic03.jpg" alt="" /></a>
+				</div>
+				<p>5-Minute Meditation Techniques</p>
+			</section>
+			<section class="col-4 col-12-narrower feature">
+				<div class="image-wrapper">
+					<a href="https://health.clevelandclinic.org/how-to-start-a-self-care-routine" class="image featured"target="_blank"><img src="Img/pic04.jpg" alt="" /></a>
+				</div>
+				<p>How to Create a Self-Care Routine</p>
+						</section>
+			<section class="col-4 col-12-narrower feature">
+				<div class="image-wrapper">
+					<a href="https://www.helpguide.org/wellness/fitness/the-mental-health-benefits-of-exercise" class="image featured"target="_blank"><img src="Img/pic05.jpg" alt="" /></a>
+				</div>
+				<p>The Benefits of Physical Exercise for Mental Health</p>
+			</section>
+		</div>
+		
+		<!-- Footer -->
+<footer>
         <p>&copy; 2024 Te Hauora o Te Hinengaro. All Rights Reserved.</p>
-    </footer>
+</footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+	</body>
 </html>
