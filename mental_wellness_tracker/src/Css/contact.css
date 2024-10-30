@@ -1,0 +1,108 @@
+/* General styles */
+body, html {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    color: #333;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #004d40; /* Dark green */
+    padding: 10px 0;
+}
+
+.navbar-brand, .nav-link {
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link {
+    padding: 0 15px;
+}
+
+.nav-link:hover {
+    color: #f2a900 !important; /* Gold/Yellow */
+}
+
+/* Hero Banner styles */
+.contact-banner {
+    background-color: #004d40; /* Dark green */
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.contact-banner h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contact-banner p {
+    font-size: 1.2em;
+}
+
+/* Card styles */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title i {
+    color: #004d40;
+    margin-right: 10px;
+}
+
+.btn-custom {
+    background-color: #f2a900; /* Gold */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-custom:hover {
+    background-color: #004d40;
+    color: white;
+}
+
+/* Input group styles */
+.input-group-text {
+    background-color: #f2a900;
+    border: none;
+    color: white;
+}
+
+.form-control:focus {
+    border-color: #f2a900;
+    box-shadow: none;
+}
+
+/* Footer styles */
+footer {
+    margin-top: auto;
+    padding: 15px 0;
+    background-color: #004d40;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar-nav .nav-item .nav-link {
+        padding: 10px;
+    }
+
+    .contact-banner h1 {
+        font-size: 2.2em;
+    }
+}

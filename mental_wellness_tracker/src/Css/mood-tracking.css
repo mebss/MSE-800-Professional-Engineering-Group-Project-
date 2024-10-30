@@ -1,0 +1,124 @@
+/* mood-tracking.css */
+
+/* General styles for Mood Tracking page */
+.mood-container {
+    padding: 40px 20px;
+    background-color: #fafafa;
+}
+
+.mood-container h2 {
+    color: #004d40;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.mood-container p {
+    font-size: 1.15em;
+    margin-bottom: 40px;
+    color: #555;
+    text-align: center;
+}
+
+/* Mood Logging Form */
+.mood-form {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mood-form .form-label {
+    color: #004d40;
+    font-weight: bold;
+}
+
+.mood-form .form-select {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.mood-form .btn-success {
+    background-color: #004d40;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.mood-form .btn-success:hover {
+    background-color: #00796b;
+}
+
+/* Mood Log */
+.mood-log {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.mood-log h4 {
+    color: #00796b;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.mood-log .list-group-item {
+    background-color: #ffffff;
+    border: none;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-left: 4px solid #004d40;
+    display: flex;
+    align-items: center;
+}
+
+.mood-log .list-group-item strong {
+    flex: 0 0 120px;
+}
+
+.mood-log .list-group-item span {
+    font-size: 1.2em;
+}
+
+/* Chart Section */
+.chart-section {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.chart-section h4 {
+    color: #00796b;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Footer styles */
+footer.footer {
+    background-color: #004d40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+}
+
+footer.footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .mood-form,
+    .mood-log,
+    .chart-section {
+        width: 90%;
+    }
+}

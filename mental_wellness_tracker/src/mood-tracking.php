@@ -55,6 +55,15 @@ while ($stmt->fetch()) {
 }
 $stmt->close();
 $conn->close();
+
+// Define an array mapping moods to emojis
+$mood_emojis = [
+    'Happy' => '😊',
+    'Sad' => '😢',
+    'Stressed' => '😫',
+    'Excited' => '😃',
+    'Calm' => '😌'
+];
 ?>
 
 <!DOCTYPE html>
@@ -63,8 +72,12 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood Tracking - Te Hauora o Te Hinengaro</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- Default Styles -->
+    <link rel="stylesheet" href="Css/style.css">
+    <!-- Mood Tracking Page Styles -->
+    <link rel="stylesheet" href="Css/mood-tracking.css">
     <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -74,7 +87,7 @@ $conn->close();
     <?php include 'navbar.php'; ?>
 
     <!-- Mood Tracking Section -->
-    <div class="container mt-5">
+    <div class="container mood-container">
         <h2>Mood Tracking</h2>
         <p>Track your mood over time to identify patterns and emotional trends.</p>
 
@@ -83,42 +96,48 @@ $conn->close();
         <?php } ?>
 
         <!-- Mood logging form -->
-        <form method="POST" action="mood-tracking.php" class="mb-4">
-            <div class="mb-3">
-                <label for="mood" class="form-label">How do you feel today?</label>
-                <select name="mood" id="mood" class="form-select" required>
-                    <option value="Happy">Happy</option>
-                    <option value="Sad">Sad</option>
-                    <option value="Stressed">Stressed</option>
-                    <option value="Excited">Excited</option>
-                    <option value="Calm">Calm</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-success">Log Mood</button>
-        </form>
+        <div class="mood-form">
+            <form method="POST" action="mood-tracking.php">
+                <div class="mb-3">
+                    <label for="mood" class="form-label">How do you feel today?</label>
+                    <select name="mood" id="mood" class="form-select" required>
+                        <option value="Happy">😊 Happy</option>
+                        <option value="Sad">😢 Sad</option>
+                        <option value="Stressed">😫 Stressed</option>
+                        <option value="Excited">😃 Excited</option>
+                        <option value="Calm">😌 Calm</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-success">Log Mood</button>
+            </form>
+        </div>
 
         <!-- Display mood logs -->
-        <h4>Your Mood Log</h4>
-        <ul class="list-group mb-4">
-            <?php if (!empty($mood_logs)) { 
-                foreach ($mood_logs as $log) { ?>
-                    <li class="list-group-item">
-                        <strong><?php echo htmlspecialchars($log['date']); ?>:</strong>
-                        <?php echo htmlspecialchars($log['mood']); ?>
-                    </li>
-                <?php } 
-            } else { ?>
-                <li class="list-group-item">No mood entries logged yet.</li>
-            <?php } ?>
-        </ul>
+        <div class="mood-log">
+            <h4>Your Mood Log</h4>
+            <ul class="list-group mb-4">
+                <?php if (!empty($mood_logs)) { 
+                    foreach ($mood_logs as $log) { ?>
+                        <li class="list-group-item">
+                            <strong><?php echo htmlspecialchars($log['date']); ?>:</strong>
+                            <span><?php echo $mood_emojis[$log['mood']] . ' ' . htmlspecialchars($log['mood']); ?></span>
+                        </li>
+                    <?php } 
+                } else { ?>
+                    <li class="list-group-item">No mood entries logged yet.</li>
+                <?php } ?>
+            </ul>
+        </div>
 
         <!-- Chart Section -->
-        <h4>Your Mood Trend</h4>
-        <canvas id="moodChart" width="400" height="200"></canvas>
+        <div class="chart-section">
+            <h4>Your Mood Trend</h4>
+            <canvas id="moodChart" width="400" height="200"></canvas>
+        </div>
     </div>
 
     <!-- Footer -->
-    <footer class="mt-auto">
+    <footer class="footer">
         <p>&copy; 2024 Te Hauora o Te Hinengaro. All Rights Reserved.</p>
     </footer>
 
@@ -126,17 +145,25 @@ $conn->close();
         // Prepare mood data for the chart
         const moodData = <?php echo json_encode(array_reverse($mood_logs)); ?>;
 
-        // Convert moods to a numerical scale
+        // Map moods to numerical scores and emojis
         const moodMap = {
-            'Happy': 5,
-            'Excited': 4,
-            'Calm': 3,
-            'Stressed': 2,
-            'Sad': 1
+            'Happy': { score: 5, emoji: '😊' },
+            'Excited': { score: 4, emoji: '😃' },
+            'Calm': { score: 3, emoji: '😌' },
+            'Stressed': { score: 2, emoji: '😫' },
+            'Sad': { score: 1, emoji: '😢' }
         };
 
         const dates = moodData.map(log => log.date);
-        const moodScores = moodData.map(log => moodMap[log.mood]);
+        const moodScores = moodData.map(log => moodMap[log.mood].score);
+
+        const moodEmojis = {
+            1: '😢',
+            2: '😫',
+            3: '😌',
+            4: '😃',
+            5: '😊'
+        };
 
         // Create the chart
         const ctx = document.getElementById('moodChart').getContext('2d');
@@ -151,6 +178,7 @@ $conn->close();
                     borderColor: 'rgba(0, 150, 136, 1)',
                     borderWidth: 2,
                     fill: true,
+                    tension: 0.4
                 }]
             },
             options: {
@@ -160,15 +188,11 @@ $conn->close();
                         ticks: {
                             stepSize: 1,
                             callback: function(value) {
-                                switch(value) {
-                                    case 5: return 'Happy';
-                                    case 4: return 'Excited';
-                                    case 3: return 'Calm';
-                                    case 2: return 'Stressed';
-                                    case 1: return 'Sad';
-                                }
+                                return moodEmojis[value] || '';
                             }
-                        }
+                        },
+                        min: 1,
+                        max: 5
                     }
                 },
                 responsive: true,
@@ -181,6 +205,7 @@ $conn->close();
         });
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ></script>
 </body>
 </html>

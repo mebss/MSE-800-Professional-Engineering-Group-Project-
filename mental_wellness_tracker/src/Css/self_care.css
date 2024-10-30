@@ -1,0 +1,114 @@
+/* selfcare.css */
+
+/* General styles for Self-Care page */
+.selfcare-container {
+    padding: 40px 20px;
+    background-color: #fafafa;
+}
+
+.selfcare-container h2 {
+    color: #004d40;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.selfcare-container p {
+    font-size: 1.15em;
+    margin-bottom: 40px;
+    color: #555;
+    text-align: center;
+}
+
+/* Category styles */
+.selfcare-category {
+    margin-bottom: 40px;
+}
+
+.selfcare-category h4 {
+    color: #00796b;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.selfcare-category .list-group-item {
+    background-color: #fff;
+    border: none;
+    border-left: 4px solid #004d40;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    transition: background-color 0.3s;
+}
+
+.selfcare-category .list-group-item:hover {
+    background-color: #e0f2f1;
+    cursor: pointer;
+}
+
+/* Resources Section */
+.resources-section {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.resources-section h4 {
+    color: #004d40;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.resources-section .list-group-item {
+    background-color: #fff;
+    border: none;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-left: 4px solid #f2a900;
+    transition: background-color 0.3s;
+}
+
+.resources-section .list-group-item:hover {
+    background-color: #fff3e0;
+}
+
+.resources-section .list-group-item a {
+    color: #004d40;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.resources-section .list-group-item a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles */
+footer.footer {
+    background-color: #004d40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+}
+
+footer.footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .selfcare-category {
+        margin-bottom: 30px;
+    }
+
+    .selfcare-container h2,
+    .resources-section h4 {
+        font-size: 1.8em;
+    }
+}

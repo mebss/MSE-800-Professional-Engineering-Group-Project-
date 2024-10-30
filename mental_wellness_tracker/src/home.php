@@ -29,34 +29,55 @@ $stmt_goal->bind_result($goal);
 $stmt_goal->fetch();
 $stmt_goal->close();
 $conn->close();
+
+// Define an array mapping moods to emojis (if needed)
+$mood_emojis = [
+    'Happy' => '😊',
+    'Sad' => '😢',
+    'Stressed' => '😫',
+    'Excited' => '😃',
+    'Calm' => '😌'
+];
+
+// Fetch the user's username from the session
+$username = $_SESSION['username'];
+
+// Dynamic Greeting based on time of day
+$hour = date('H');
+if ($hour >= 5 && $hour < 12) {
+    $greeting = "Good Morning";
+} elseif ($hour >= 12 && $hour < 17) {
+    $greeting = "Good Afternoon";
+} else {
+    $greeting = "Good Evening";
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Te Hauora o Te Hinengaro</title>
-    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Default Styles -->
+    <link rel="stylesheet" href="Css/style.css">
+    <!-- Home Page Styles -->
+    <link rel="stylesheet" href="Css/home.css">
 </head>
 <body>
 
     <!-- Include the Navbar -->
     <?php include 'navbar.php'; ?>
 
-    <!-- Banner Section -->
-    <section class="banner">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h1>Welcome to Te Hauora o Te Hinengaro, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+            <h1><?php echo $greeting; ?>, <?php echo htmlspecialchars($username); ?>!</h1>
             <p>Your platform for tracking and improving your mental wellness, grounded in the principles of Partnership, Participation, and Protection.</p>
             <a href="mood-tracking.php" class="btn btn-custom">Get Started</a>
             <a href="https://www.youtube.com/watch?v=aXItOY0sLRY" target="_blank" class="btn btn-outline-light">Watch Video</a>
-            <img src="Img\image.jpg" alt="Mental Wellness" class="img-fluid mt-3" style="border-radius: 10px; width: 100%; max-height: 400px; object-fit: cover;">
         </div>
     </section>
 
@@ -66,7 +87,8 @@ $conn->close();
             <div class="row">
                 <!-- Mood Tracking -->
                 <div class="col-md-4">
-                    <div class="feature-box p-3">
+                    <div class="feature-box">
+                        <img src="Img/mood-tracking.png" alt="Mood Tracking">
                         <h4>Mood Tracking</h4>
                         <p>Monitor your mood and emotional patterns over time.</p>
                         <a href="mood-tracking.php" class="btn btn-primary">Track Your Mood</a>
@@ -88,13 +110,14 @@ $conn->close();
 
                 <!-- Goal Setting -->
                 <div class="col-md-4">
-                    <div class="feature-box p-3">
+                    <div class="feature-box">
+                        <img src="Img/goal-setting.png" alt="Goal Setting">
                         <h4>Goal Setting</h4>
                         <p>Set personal goals for improving mental wellness.</p>
                         <a href="goal-setting.php" class="btn btn-primary">Set Goals</a>
                         <!-- Display ongoing goal -->
                         <?php if (!empty($goal)) { ?>
-                            <p class="mt-3"><strong>Current goal:</strong> <br> <i><?php echo htmlspecialchars($goal); ?></i></p>
+                            <p class="mt-3"><strong>Current goal:</strong><br><i><?php echo htmlspecialchars($goal); ?></i></p>
                         <?php } else { ?>
                             <p class="mt-3"><i>No ongoing goals set.</i></p>
                         <?php } ?>
@@ -103,7 +126,8 @@ $conn->close();
 
                 <!-- Self-Care -->
                 <div class="col-md-4">
-                    <div class="feature-box p-3">
+                    <div class="feature-box">
+                        <img src="Img/self-care.png" alt="Self-Care">
                         <h4>Self-Care</h4>
                         <p>Receive personalized self-care suggestions tailored to your needs.</p>
                         <a href="self-care.php" class="btn btn-primary">Explore Self-Care</a>
@@ -113,12 +137,25 @@ $conn->close();
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-item">
+            <p>"Te Hauora o Te Hinengaro has been a game-changer for me. Tracking my mood and setting personal goals has significantly improved my mental well-being."</p>
+            <div class="author">- Alex M.</div>
+        </div>
+        <div class="testimonial-item">
+            <p>"The self-care suggestions are personalized and practical. I've found new ways to manage stress and stay positive."</p>
+            <div class="author">- Jamie L.</div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <p>&copy; 2024 Te Hauora o Te Hinengaro. All Rights Reserved.</p>
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ></script>
 </body>
 </html>

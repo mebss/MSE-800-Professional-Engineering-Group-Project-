@@ -41,7 +41,8 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Self-Care - Te Hauora o Te Hinengaro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Css/self_care.css">
+	<link rel="stylesheet" href="Css/style.css">
 </head>
 <body>
 
@@ -49,35 +50,54 @@ $conn->close();
     <?php include 'navbar.php'; ?>
 
     <!-- Self-Care Section -->
-    <div class="container mt-5">
-        <h2>Self-Care</h2>
-        <p>Explore personalized self-care suggestions and tips to improve your mental and emotional well-being.</p>
+<div class="container selfcare-container">
+    <h2>Self-Care</h2>
+    <p>Explore personalized self-care suggestions and tips to improve your mental and emotional well-being.</p>
 
-        <div class="row">
-            <?php foreach ($categories as $category) { ?>
-                <div class="col-md-6">
-                    <h4><?php echo htmlspecialchars($category); ?> Self-Care</h4>
-                    <ul class="list-group mb-4">
-                        <?php if (!empty($self_care_suggestions[$category])) {
-                            foreach ($self_care_suggestions[$category] as $suggestion) { ?>
-                                <li class="list-group-item"><?php echo htmlspecialchars($suggestion); ?></li>
-                            <?php }
-                        } else { ?>
-                            <li class="list-group-item">No suggestions available for this category.</li>
-                        <?php } ?>
-                    </ul>
-                </div>
-            <?php } ?>
-        </div>
+    <div class="row">
+        <?php foreach ($categories as $category) { ?>
+            <div class="col-md-6 selfcare-category">
+                <h4>
+                    <img src="Img/icon-<?php echo strtolower($category); ?>.png" alt="<?php echo htmlspecialchars($category); ?> Icon" style="width: 100px; height: 100px; margin-right: 10px;">
+                    <?php echo htmlspecialchars($category); ?> Self-Care
+                </h4>
+                <ul class="list-group">
+                    <?php if (!empty($self_care_suggestions[$category])) {
+                        foreach ($self_care_suggestions[$category] as $suggestion) { ?>
+                            <li class="list-group-item"><?php echo htmlspecialchars($suggestion); ?></li>
+                        <?php }
+                    } else { ?>
+                        <li class="list-group-item">No suggestions available for this category.</li>
+                    <?php } ?>
+                </ul>
+            </div>
+        <?php } ?>
+    </div>
 
-        <!-- Resources Section -->
+    <!-- Resources Section -->
+    <div class="resources-section">
         <h4>Additional Resources</h4>
-        <ul class="list-group mb-4">
-            <li class="list-group-item"><a href="https://www.verywellmind.com/practice-5-minute-meditation-3144714"target="_blank">5-Minute Meditation Techniques</a></li>
-            <li class="list-group-item"><a href="https://health.clevelandclinic.org/how-to-start-a-self-care-routine"target="_blank">How to Create a Self-Care Routine</a></li>
-            <li class="list-group-item"><a href="https://www.helpguide.org/wellness/fitness/the-mental-health-benefits-of-exercise"target="_blank">The Benefits of Physical Exercise for Mental Health</a></li>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="https://www.verywellmind.com/practice-5-minute-meditation-3144714" target="_blank">
+                    5-Minute Meditation Techniques
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="https://health.clevelandclinic.org/how-to-start-a-self-care-routine" target="_blank">
+                    How to Create a Self-Care Routine
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="https://www.helpguide.org/wellness/fitness/the-mental-health-benefits-of-exercise" target="_blank">
+                    The Benefits of Physical Exercise for Mental Health
+                </a>
+            </li>
         </ul>
     </div>
+</div>
+
+
 
     <!-- Footer -->
     <footer class="mt-auto">
