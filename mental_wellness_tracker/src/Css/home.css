@@ -91,17 +91,8 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.feature-box h4 {
-    color: #f4f4f4;
-    font-weight: bold;
-    margin-bottom: 20px;
-    font-size: 1.5em;
-}
-
-.feature-box p {
-    color: #555;
-    margin-bottom: 20px;
-    font-size: 1.1em;
+.feature-box h4, .feature-box p, .feature-box ul li, .feature-box ul li strong {
+    color: #ffffff;
 }
 
 .feature-box .btn-primary {
@@ -118,6 +109,7 @@ body {
 .feature-box img {
     width: 60px;
     margin-bottom: 20px;
+    background-color: transparent;
 }
 
 .feature-box ul {
@@ -126,15 +118,16 @@ body {
 }
 
 .feature-box ul li {
-    background-color: #f9f9f9;
+    background-color: #333; /* Adjusted to ensure contrast with white text */
     margin-bottom: 10px;
     padding: 10px;
     border-left: 4px solid #e7eaea;
 }
 
 .feature-box ul li strong {
-    margin-right: 5px;
+    color: #ffffff; /* Ensure strong text within list items is white */
 }
+
 .testimonials {
     background-color: #e0f2f1;
     padding: 60px 20px;
