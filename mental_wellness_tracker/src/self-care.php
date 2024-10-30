@@ -80,8 +80,8 @@ $conn->close();
 									<a href="#" class="image featured first"><img src="Img/pic01.jpg" alt="" /></a>
 								</div>
 								<header>
-									<h2>Take a short walk outside<br />
-										to get fresh air.</h2>
+									<h3>Take a short walk outside<br />
+										to get fresh air.</h3>
 								</header>
 								<p>A short stroll outside can work wonders! Fresh air, sunshine,
 									 and a bit of greenery can instantly lift your mood. So, take a break, 
@@ -93,9 +93,9 @@ $conn->close();
 									<a href="#" class="image featured"><img src="Img/pic02.jpg" alt="" /></a>
 								</div>
 								<header>
-									<h2>Stay hydrated
+									<h3>Stay hydrated
 										<br />
-										and eat a balanced meal.</h2>
+										and eat a balanced meal.</h3>
 								</header>
 								<p>Fuel your body like a superhero! Stay hydrated and eat a balanced diet
 									 to power through your day and conquer any challenge.</p>
@@ -122,8 +122,8 @@ $conn->close();
 									<a href="#" class="image featured first"><img src="Img/pic06.jpg" alt="" /></a>
 								</div>
 								<header>
-									<h2>Journal your thoughts or emotions.
-									</h2>
+									<h3>Journal your thoughts or emotions.
+									</h3>
 								</header>
 								<p>Journaling can help you process your emotions, identify patterns in your thoughts,
 									 and develop a greater sense of self-awareness. </p>
@@ -134,8 +134,8 @@ $conn->close();
 									<a href="#" class="image featured"><img src="Img/pic07.jpg" alt="" /></a>
 								</div>
 								<header>
-									<h2>Talk to a friend<br />
-										or loved one about your feelings.</h2>
+									<h3>Talk to a friend<br />
+										or loved one about your feelings.</h3>
 								</header>
 								<p>Connecting with a friend or loved one and expressing your emotions can provide emotional support and validation. 
 									It can also help you to feel less alone and more understood. </p>
@@ -160,8 +160,8 @@ $conn->close();
 								<a href="#" class="image featured first"><img src="Img/pic08.jpg" alt="" /></a>
 							</div>
 							<header>
-								<h2>Read a book<br />
-									or learn something new.</h2>
+								<h3>Read a book<br />
+									or learn something new.</h3>
 							</header>
 							<p>Reading a book or learning something new can stimulate your mind, reduce stress, 
 								and provide you with a sense of accomplishment. </p>
@@ -172,9 +172,9 @@ $conn->close();
 								<a href="#" class="image featured"><img src="Img/pic09.jpg" alt="" /></a>
 							</div>
 							<header>
-								<h2>Practice gratitude by writing down 
+								<h3>Practice gratitude by writing down 
 									<br />
-									what you are thankful for.</h2>
+									what you are thankful for.</h3>
 							</header>
 							<p>By consciously acknowledging the things you're grateful for,
 								 you can cultivate a more positive outlook on life and reduce stress. </p>

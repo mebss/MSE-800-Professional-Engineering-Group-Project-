@@ -196,6 +196,17 @@ input, select, textarea {
 		max-width: 100%;
 		width: 1200px;
 	}		
+	footer .container {
+		max-width: 100%;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	footer .container * {
+		margin: 0;
+		padding: 0;
+	}
+	
 
 /* Row */
 
@@ -389,7 +400,6 @@ input, select, textarea {
 		position: relative;
 		background: #fff;
 		overflow-x: hidden;
-		padding: 2em 0 2em 0;
 	}
 
 	.image-wrapper {
