@@ -219,5 +219,11 @@ $conn->close();
 			<script src="assets2/js/util.js"></script>
 			<script src="assets2/js/main.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+			<script>
+				$(document).ready(function() {
+					$('.scrolly').scrolly();
+				});
+			</script>
+
 	</body>
 </html>
