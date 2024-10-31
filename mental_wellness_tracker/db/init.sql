@@ -30,8 +30,10 @@ CREATE TABLE IF NOT EXISTS goals (
     goal TEXT NOT NULL,
     status ENUM('ongoing', 'completed') DEFAULT 'ongoing',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    completed_at TIMESTAMP NULL DEFAULT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
 
 -- Create the self_care_suggestions table (if it does not exist)
 CREATE TABLE IF NOT EXISTS self_care_suggestions (

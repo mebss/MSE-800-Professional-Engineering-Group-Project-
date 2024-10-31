@@ -1,0 +1,169 @@
+/* goal-setting.css */
+
+/* General styles for Goal Setting page */
+.goal-container {
+    padding: 0; /* Remove padding to accommodate the hero section */
+    background-color: #fafafa;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('Img/goal-hero.png');
+    background-size: cover;
+    background-position: center;
+    color: #004d40;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.hero-section::after {
+    content: '';
+    background: rgba(0, 77, 64, 0.6); /* Dark overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-section h2 {
+    position: relative;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    position: relative;
+    font-size: 1.2em;
+}
+
+/* New Goal Form */
+.new-goal-form {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin-top: -50px; /* Pull up over the hero section */
+    margin-bottom: 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.new-goal-form .form-label {
+    color: #004d40;
+    font-weight: bold;
+}
+
+.new-goal-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.new-goal-form .btn-success {
+    background-color: #f2a900; /* Gold color */
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.new-goal-form .btn-success:hover {
+    background-color: #004d40;
+    color: #fff;
+}
+
+/* Goals Lists */
+.goals-list {
+    margin-bottom: 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.goals-list h4 {
+    color: #00796b;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.goals-list .list-group-item {
+    background-color: #ffffff;
+    border: none;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-left: 4px solid #004d40;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.goals-list .list-group-item .goal-text {
+    flex-grow: 1;
+}
+
+.goals-list .list-group-item .btn {
+    margin-left: 15px;
+}
+
+.goals-list .list-group-item .btn-primary {
+    background-color: #f2a900;
+    border: none;
+}
+
+.goals-list .list-group-item .btn-primary:hover {
+    background-color: #004d40;
+    color: #fff;
+}
+
+.goals-list .list-group-item .text-muted {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Progress Bar for Ongoing Goals */
+.progress {
+    height: 10px;
+    background-color: #e0e0e0;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    background-color: #f2a900;
+}
+
+/* Footer styles */
+footer.footer {
+    background-color: #004d40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+}
+
+footer.footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section h2 {
+        font-size: 2.5em;
+    }
+
+    .new-goal-form {
+        width: 90%;
+        margin-top: -40px;
+    }
+
+    .goals-list {
+        width: 90%;
+    }
+}
